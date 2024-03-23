@@ -5,6 +5,7 @@ pipeline {
       
         stage('TFLint') {
             steps {
+                    sh 'pwd'
                     sh 'cd Terraform-CI-CD-Pipeline/'
                     sh 'tflint --init'
                     sh 'tflint'
