@@ -5,6 +5,7 @@ resource "aws_instance" "test_instance" {
 
 metadata_options {
     http_tokens = "required"
+    http_endpoint = "enabled"  
   }
 
  root_block_device {
