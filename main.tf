@@ -1,6 +1,6 @@
 
 resource "aws_instance" "test_instance" {
-  ami           = "ami-0c55b159cbfafe1f0"  
+  ami           = "ami-080e1f13689e07408"  
   instance_type = "t2.micro"
 
 metadata_options {
