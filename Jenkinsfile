@@ -2,13 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/palakbhawsar98/Terraform-CI-CD-Pipeline.git'
-            }
-        }
-   
-
+      
         stage('TFLint') {
             steps {
                     sh 'cd Terraform-CI-CD-Pipeline/'
