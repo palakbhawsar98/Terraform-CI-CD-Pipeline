@@ -20,9 +20,7 @@ pipeline {
         stage('Terratest') {
             steps {
                     sh 'cd test'
-                    if (!fileExists('go.mod')) {
-                         sh 'go mod init github.com/palakbhawsar98/Terraform-CI-CD-Pipeline'
-                    }
+                    sh 'if [ ! -f go.mod ]; then go mod init github.com/palakbhawsar98/Terraform-CI-CD-Pipeline; fi'
                     sh 'go mod tidy'
                     sh 'cd test'
                     sh 'go test'
