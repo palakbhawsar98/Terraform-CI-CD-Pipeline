@@ -10,6 +10,7 @@ pipeline {
                 sh 'echo $AWS_ROLE'
             }
         }
+      }    
 
     stages {
         stage('Checkout') {
