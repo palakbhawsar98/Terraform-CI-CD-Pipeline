@@ -4,13 +4,20 @@ pipeline {
     environment {
         AWS_ROLE = credentials('IAM_ROLE')
     }
-
+   
     stages {
         stage('Checkout') {
             steps {
                 git 'https://github.com/palakbhawsar98/Terraform-CI-CD-Pipeline.git'
             }
         }
+        
+        stage('Debug') {
+            steps {
+                sh 'echo $AWS_ROLE'
+            }
+        }  
+
 
         stage('TFLint') {
             steps {
