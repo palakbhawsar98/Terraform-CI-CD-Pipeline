@@ -20,13 +20,11 @@ pipeline {
 
         stage('Terratest') {
             steps {
-                // Change directory to the test directory
-                dir('test') {
                     sh 'cd Terraform-CI-CD-Pipeline/test'
                     sh 'go test'
                 }
             }
-        }
+        
 
         stage('Terraform workflow') {
             steps {
