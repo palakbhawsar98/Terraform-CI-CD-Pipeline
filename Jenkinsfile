@@ -22,6 +22,7 @@ pipeline {
             steps {
                 // Change directory to the test directory
                 dir('test') {
+                    sh 'cd Terraform-CI-CD-Pipeline/test'
                     sh 'go test'
                 }
             }
