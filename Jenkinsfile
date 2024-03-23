@@ -21,6 +21,8 @@ pipeline {
         stage('Terratest') {
             steps {
                     sh 'cd Terraform-CI-CD-Pipeline/test'
+                    sh 'go mod init github.com/palakbhawsar98/Terraform-CI-CD-Pipeline'
+                    sh 'go mod tidy'
                     sh 'go test'
                 }
             }
