@@ -19,7 +19,9 @@ pipeline {
 
         stage('Terratest') {
             steps {
-                    sh 'cd test'
+                    sh 'pwd'
+                    sh 'cd test/'
+                    sh 'pwd'
                     sh 'if [ ! -f go.mod ]; then go mod init github.com/palakbhawsar98/Terraform-CI-CD-Pipeline; fi'
                     sh 'go mod tidy'
                     sh 'cd test'
