@@ -4,7 +4,7 @@ resource "aws_instance" "test_instance" {
   instance_type = "t2.micro"
 
 metadata_options {
-    http_tokens = "required"
+    http_tokens = "enabled"
   }
 
  root_block_device {
