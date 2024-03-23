@@ -4,6 +4,12 @@ pipeline {
     environment {
         AWS_ROLE = credentials('IAM_ROLE')
     }
+      stages {
+        stage('Debug') {
+            steps {
+                sh 'echo $AWS_ROLE'
+            }
+        }
 
     stages {
         stage('Checkout') {
