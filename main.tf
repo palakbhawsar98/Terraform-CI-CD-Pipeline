@@ -10,14 +10,14 @@ metadata_options {
 
  root_block_device {
     volume_type           = "gp2"
-    volume_size           = 2 
+    volume_size           = 8 
     encrypted             = true 
   }
 
   ebs_block_device {
     device_name           = "/dev/sdb"
     volume_type           = "gp2"
-    volume_size           = 2  
+    volume_size           = 8  
     encrypted             = true 
   }
   tags = {
