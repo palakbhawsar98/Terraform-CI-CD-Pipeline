@@ -30,11 +30,9 @@ pipeline {
 
         stage('Terraform workflow') {
             steps {
-                dir('..') {
                     sh 'terraform init'
                     sh 'terraform plan -out=tfplan'
                     sh 'terraform apply -auto-approve tfplan'
-                }
             }
         }   
     }
