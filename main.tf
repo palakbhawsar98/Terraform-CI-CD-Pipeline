@@ -1,27 +1,24 @@
-
 resource "aws_instance" "test_instance" {
-  ami           = "ami-080e1f13689e07408"  
-  instance_type = "t2.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
 
-metadata_options {
-    http_tokens = "required"
-    http_endpoint = "enabled"  
+  metadata_options {
+    http_tokens   = "required"
+    http_endpoint = "enabled"
   }
 
- root_block_device {
-    volume_type           = "gp2"
-    volume_size           = 8 
-    encrypted             = true 
+  root_block_device {
+    volume_type = var.volume_type
+    volume_size = var.volume_size
+    encrypted   = true
   }
 
   ebs_block_device {
-    device_name           = "/dev/sdb"
-    volume_type           = "gp2"
-    volume_size           = 8  
-    encrypted             = true 
+    device_name = "/dev/sdb"
+    volume_type = var.volume_type
+    volume_size = var.volume_size
+    encrypted   = true
   }
-  tags = {
-    name = "test"
-    created_by = "Palak"
-  }          
+
+  tags = var.tags
 }
